@@ -7,11 +7,15 @@ var db = mongojs('contactlist',['contactlist']);
 // Generats the web app
 var app = express();
 
+
+var bodyParser = require('body-parser');
+
 //app.get('/', function(req, res){
   //res.send('Hello World from express server');
 //});
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 
 app.get('/contactlist', function(req, res){
   console.log("recibi un request para contactos");
@@ -20,28 +24,13 @@ app.get('/contactlist', function(req, res){
     console.log(docs);
     res.json(docs);
   });
-/*
- * person1 ={
-    name: 'Tim',
-    email: 'tim@example.com',
-    number: '111-111-111'
-  };
-  
-  person2 ={
-    name: 'Carlos',
-    email: 'carlos@example.com',
-    number: '111-222-444'
-  };
-  
-  person3 ={
-    name: 'Juan',
-    email: 'juan@example.com',
-    number: '333-333-333'
-  };
+});
 
-
-  var contactlist = [person1, person2, person3];
-  res.json(contactlist);*/
+app.post('/contactlist', function(req, res){
+  console.log(req.body);
+  db.contactlist.insert(req.body, function(err,doc){
+    res.json(doc);
+  });
 });
 
 app.listen(3001);
