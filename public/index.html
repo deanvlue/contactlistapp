@@ -14,8 +14,15 @@
           <th>Name</th>
           <th>Email</th>
           <th>Number</th>
+          <th>Action</th>
         </thead>
         <tbody>
+          <tr>
+            <td><input class="form-control" ng-model="contacts.name"></td>
+            <td><input class="form-control" ng-model="contacts.email"></td>
+            <td><input class="form-control" ng-model="contacts.number"></td>
+            <td><button class="btn btn-primary" ng-click="addContact()">Add Contact </button> </td>
+          </tr>
           <tr ng-repeat="contact in contactlist">
             <td>{{ contact.name }}</td>
             <td>{{ contact.email }}</td>
