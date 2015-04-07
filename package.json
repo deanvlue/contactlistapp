@@ -1,0 +1,41 @@
+{
+  "author": "Carlos Munoz",
+  "name": "Learn-coding-tutorial",
+  "version": "0.0.1",
+  "homepage": "https://github.com/deanvlue/contactapp",
+
+  "bugs": "https://github.com/deanvlue/contactapp/issues",
+  "repository":{
+    "type":"git",
+    "url": "git@github.com:deanvlue/contactapp.git"
+  },
+
+  "scripts":{
+    "start": "node server"
+  },
+
+  "dependencies":{
+    "express":"3.2.6",
+    "ejs": "latest",
+    "mongoose":"3.6.11",
+    "node-logging": "0.1.6",
+    "path": "0.4.9",
+    "inflection": "1.2.6",
+    "body-parser": "latest",
+    "mongojs": "latest"
+  },
+
+  "devDependencies":{
+    "grunt":"~0.4.1",
+    "grunt-contrib-compass":"0.2.0",
+    "grunt-contrib-clean":"latest",
+    "grunt-contrib-copy":"latest",
+    "grunt-contrib-jshint":"latest",
+    "grunt-contrib-concat":"latest",
+    "grunt-contrib-watch":"latest",
+    "grunt-contrib-uglify":"latest",
+    "grunt-ngmin":"latest",
+    "grunt-contrib-jasmine":"latest",
+    "grunt-contrib-nodeunit":"latest"
+  }
+}
